@@ -1,0 +1,182 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>RecLand</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div id="header" class="header">
+      <img src="./images/logo.png" alt="logo" class="header__logo" />
+      <div class="header__action">
+        <text class="header__text">Tất Cả Các Job</text>
+        <button class="btn btn--secondary">Đăng ký</button>
+        <div style="border: 1px solid #999999; height: 17px"></div>
+        <button class="btn btn--primary">Đăng Nhập</button>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <img src="./images/banner.jpg" alt="banner" style="width: 100%" />
+    <div class="container">
+      <!-- SEARCH SECTION -->
+      <div id="search_section" class="full-width">
+        <div
+          style="padding: 12px; column-gap: 12px; border-radius: 16px"
+          class="flex-box full-width"
+        >
+          <div style="column-gap: 16px" class="flex-box full-width">
+            <div style="column-gap: 4px" class="flex-box full-width search-box">
+              <img src="./images/search-icon.png" alt="search_icon" />
+              <text style="color: #999999; font-size: 14px"
+                >Nhập vị trí hoặc từ khóa...</text
+              >
+            </div>
+            <div style="border: 1px solid #999999; height: 16px"></div>
+            <div
+              style="justify-content: space-between; width: 35%"
+              class="flex-box search-box"
+            >
+              <div class="flex-box">
+                <img src="./images/location.png" alt="location" />
+                <text style="color: #999999; font-size: 14px; margin-left: 4px"
+                  >Chọn địa điểm</text
+                >
+              </div>
+              <img src="./images/dropdown.png" alt="dropdown" />
+            </div>
+          </div>
+          <button class="btn btn--primary">Tìm Kiếm</button>
+        </div>
+        <div class="suggestion-wrapper">
+          <span style="font-size: 14px">Đề xuất:</span>
+          <ul class="suggestion-list">
+            <li>Reactjs</li>
+            <li>VueJS</li>
+            <li>Angular</li>
+            <li>Design</li>
+            <li>.NET</li>
+            <li>PHP</li>
+            <li>java</li>
+            <li>Mobile</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- JOBS SECTION -->
+      <div id="jobs-section" class="full-width">
+        <div
+          class="flex-box full-width"
+          style="justify-content: space-between; padding-right: 16px"
+        >
+          <div class="flex-box" style="column-gap: 9px">
+            <img
+              src="./images/heart-icon.png"
+              style="
+                width: 67px;
+                box-shadow: 0px 12.34px 30px rgba(0, 0, 0, 0.08);
+                border-radius: 50%;
+              "
+            />
+            <h1>Jobs tốt nhất</h1>
+          </div>
+          <text style="color: #021a84; font-size: 18px; font-weight: 500"
+            >Xem Tất Cả</text
+          >
+        </div>
+        <div id="jobs-grid" class="jobs__grid"></div>
+      </div>
+
+      <!-- REASONS SECTION -->
+      <div>
+        <div style="text-align: center">
+          <text style="color: #021a84; font-size: 18px; line-height: 28px"
+            >Why?</text
+          >
+          <h1>Tại Sao Lựa Chọn Recland?</h1>
+        </div>
+        <div class="jobs__grid">
+          <div
+            class="reason__box"
+            style="background-color: rgba(42, 218, 102, 0.4); color: #156d33"
+          >
+            <img src="./images/Search_job.png" alt="jobs" />
+            <text class="reason__title"
+              >Đa dạng việc làm, thêm nhiều lựa chọn hấp dẫn</text
+            >
+            <p class="reason__content">
+              Hơn 200+ việc làm IT, giúp các bạn REC có một kho việc làm để các
+              bạn tìm kiếm, sale jobs đến những ứng viên phù hợp.
+            </p>
+          </div>
+
+          <div
+            class="reason__box"
+            style="background-color: rgba(2, 26, 132, 0.4); color: #010d42"
+          >
+            <img src="./images/Dollar.png" alt="dollar" />
+            <text class="reason__title"
+              >Cơ chế hoa hồng hấp dẫn, rõ ràng và minh bạch</text
+            >
+            <p class="reason__content">
+              RecLand đem đến cho các bạn REC mức hoa hồng hấp dẫn, giúp cho các
+              bạn REC có được mức thu nhập tương xứng mà không cần đến công ty
+              làm việc
+            </p>
+          </div>
+
+          <div
+            class="reason__box"
+            style="background-color: rgba(229, 83, 42, 0.4); color: #e5532a"
+          >
+            <img src="./images/Network.png" alt="network" />
+            <text class="reason__title"
+              >Mở rộng network và học hỏi từ cộng đồng</text
+            >
+            <p class="reason__content">
+              RecLand cũng thường xuyên tổ chức những buổi chia sẻ, buổi offline
+              nhằm giúp các bạn REC trau dồi, học hỏi và mở rộng được network
+              trong lĩnh vực tuyển dụng.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARTNERS SECTION -->
+      <div>
+        <h1 style="text-align: center">Đối tác</h1>
+        <div
+          class="flex-box"
+          style="column-gap: 60px; margin-top: 40px; justify-content: center"
+        >
+          <div class="partner__logo">
+            <img src="./images/partner1.png" />
+          </div>
+
+          <div class="partner__logo">
+            <img src="./images/partner2.png" />
+          </div>
+
+          <div class="partner__logo">
+            <img src="./images/partner3.png" />
+          </div>
+
+          <div class="partner__logo">
+            <img src="./images/partner4.png" />
+          </div>
+
+          <div class="partner__logo">
+            <img src="./images/partner5.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    fetch("jobs-cards.html")
+      .then((res) => res.text())
+      .then((data) => (document.getElementById("jobs-grid").innerHTML = data));
+  </script>
+</html>
