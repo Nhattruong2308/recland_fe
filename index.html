@@ -3,54 +3,100 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="responsive.css" />
     <title>RecLand</title>
   </head>
   <body>
     <!-- HEADER -->
-    <div id="header" class="header">
-      <img src="./images/logo.png" alt="logo" class="header__logo" />
+    <section class="header">
+      <picture>
+        <source srcset="./images/logo_no_text.png" media="(max-width: 768px)" />
+        <img src="./images/logo.png" alt="logo" class="header__logo" />
+      </picture>
+
       <div class="header__action">
-        <text class="header__text">Tất Cả Các Job</text>
+        <p class="header__text">Tất Cả Các Job</p>
         <button class="btn btn--secondary">Đăng ký</button>
         <div style="border: 1px solid #999999; height: 17px"></div>
         <button class="btn btn--primary">Đăng Nhập</button>
       </div>
-    </div>
+      <div class="hamburger-menu">
+        <img
+          src="./images/burger-menu.svg"
+          alt="menu"
+          class="hamburger-menu__icon"
+        />
+        <div class="hamburger-menu__action">
+          <div class="hamburger-menu__action--block">
+            <img
+              src="./images/all_jobs.svg"
+              alt="all_jobs"
+              class="hamburger-menu__action--icon"
+            />
+            <p class="hamburger-menu__action--text">Tất cả các Job</p>
+          </div>
 
+          <div class="hamburger-menu__action--block">
+            <img
+              src="./images/login_icon.svg"
+              alt="all_jobs"
+              class="hamburger-menu__action--icon"
+            />
+            <p class="hamburger-menu__action--text">Đăng nhập</p>
+          </div>
+
+          <div class="hamburger-menu__action--block">
+            <img
+              src="./images/logout_icon.svg"
+              alt="all_jobs"
+              class="hamburger-menu__action--icon"
+            />
+            <p class="hamburger-menu__action--text">Đăng ký</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER -->
+    <img src="./images/banner.jpg" alt="banner" class="banner" />
     <!-- CONTENT -->
-    <img src="./images/banner.jpg" alt="banner" style="width: 100%" />
-    <div class="container">
+    <section class="container">
       <!-- SEARCH SECTION -->
-      <div id="search_section" class="full-width">
-        <div
-          style="padding: 12px; column-gap: 12px; border-radius: 16px"
-          class="flex-box full-width"
-        >
-          <div style="column-gap: 16px" class="flex-box full-width">
-            <div style="column-gap: 4px" class="flex-box full-width search-box">
-              <img src="./images/search-icon.png" alt="search_icon" />
-              <text style="color: #999999; font-size: 14px"
-                >Nhập vị trí hoặc từ khóa...</text
-              >
+      <div class="full-width">
+        <div class="flex-box full-width search__container">
+          <div class="flex-box full-width search__box">
+            <div class="flex-box full-width search__box-job">
+              <img
+                src="./images/search-icon.png"
+                alt="search_icon"
+                class="search-icon"
+              />
+              <p class="search__input_placeholder">
+                Nhập vị trí hoặc từ khóa...
+              </p>
             </div>
-            <div style="border: 1px solid #999999; height: 16px"></div>
-            <div
-              style="justify-content: space-between; width: 40%"
-              class="flex-box search-box"
-            >
+            <div class="search__box-direction"></div>
+            <div class="flex-box search__box-location">
               <div class="flex-box">
-                <img src="./images/location.png" alt="location" />
-                <text style="color: #999999; font-size: 14px; margin-left: 4px"
-                  >Chọn địa điểm</text
-                >
+                <img
+                  src="./images/location.png"
+                  alt="location"
+                  class="location-icon"
+                />
+                <p class="search__input_placeholder">Chọn địa điểm</p>
               </div>
-              <img src="./images/dropdown.png" alt="dropdown" />
+              <img
+                src="./images/dropdown.png"
+                alt="dropdown"
+                class="dropdown-icon"
+              />
             </div>
           </div>
-          <button class="btn btn--primary">Tìm Kiếm</button>
+          <button class="btn btn--primary btn-search">Tìm Kiếm</button>
         </div>
+        <!-- SUGGESTIONS -->
         <div class="suggestion-wrapper">
-          <span style="font-size: 14px">Đề xuất:</span>
+          <span class="suggestion-label">Đề xuất:</span>
           <ul class="suggestion-list">
             <li>Reactjs</li>
             <li>VueJS</li>
@@ -65,27 +111,13 @@
       </div>
 
       <!-- JOBS SECTION -->
-      <div id="jobs-section" class="full-width">
-        <div
-          class="flex-box full-width"
-          style="justify-content: space-between; padding-right: 16px"
-        >
-          <div class="flex-box" style="column-gap: 9px">
-            <img
-              src="./images/heart-icon.png"
-              style="
-                width: 67px;
-                box-shadow: 0px 12.34px 30px rgba(0, 0, 0, 0.08);
-                border-radius: 50%;
-                background-color: rgba(255, 255, 255, 0.4);
-                padding: 7.05px;
-              "
-            />
+      <div class="full-width">
+        <div class="flex-box full-width jobs__title">
+          <div class="flex-box">
+            <img src="./images/heart-icon.png" class="jobs__title__img" />
             <h1>Jobs tốt nhất</h1>
           </div>
-          <text style="color: #021a84; font-size: 18px; font-weight: 500"
-            >Xem Tất Cả</text
-          >
+          <p class="jobs_title_textall">Xem Tất Cả</p>
         </div>
         <div id="jobs-grid" class="jobs__grid"></div>
       </div>
@@ -93,34 +125,30 @@
       <!-- REASONS SECTION -->
       <div>
         <div style="text-align: center">
-          <text style="color: #021a84; font-size: 18px; line-height: 28px"
-            >Why?</text
-          >
+          <h4>Why?</h4>
           <h1>Tại Sao Lựa Chọn Recland?</h1>
         </div>
-        <div class="jobs__grid">
-          <div
-            class="reason__box"
-            style="background-color: rgba(42, 218, 102, 0.4); color: #156d33"
-          >
-            <img src="./images/Search_job.png" alt="jobs" />
-            <text class="reason__title"
-              >Đa dạng việc làm, thêm nhiều lựa chọn hấp dẫn</text
-            >
+        <div class="reasons__grid">
+          <div class="reason__box reason-1">
+            <img
+              src="./images/Search_job.png"
+              alt="jobs"
+              class="reason__icon"
+            />
+            <p class="reason__title">
+              Đa dạng việc làm, thêm nhiều lựa chọn hấp dẫn
+            </p>
             <p class="reason__content">
               Hơn 200+ việc làm IT, giúp các bạn REC có một kho việc làm để các
               bạn tìm kiếm, sale jobs đến những ứng viên phù hợp.
             </p>
           </div>
 
-          <div
-            class="reason__box"
-            style="background-color: rgba(2, 26, 132, 0.4); color: #010d42"
-          >
-            <img src="./images/Dollar.png" alt="dollar" />
-            <text class="reason__title"
-              >Cơ chế hoa hồng hấp dẫn, rõ ràng và minh bạch</text
-            >
+          <div class="reason__box reason-2">
+            <img src="./images/Dollar.png" alt="dollar" class="reason__icon" />
+            <p class="reason__title">
+              Cơ chế hoa hồng hấp dẫn, rõ ràng và minh bạch
+            </p>
             <p class="reason__content">
               RecLand đem đến cho các bạn REC mức hoa hồng hấp dẫn, giúp cho các
               bạn REC có được mức thu nhập tương xứng mà không cần đến công ty
@@ -128,14 +156,13 @@
             </p>
           </div>
 
-          <div
-            class="reason__box"
-            style="background-color: rgba(229, 83, 42, 0.4); color: #e5532a"
-          >
-            <img src="./images/Network.png" alt="network" />
-            <text class="reason__title"
-              >Mở rộng network và học hỏi từ cộng đồng</text
-            >
+          <div class="reason__box reason-3">
+            <img
+              src="./images/Network.png"
+              alt="network"
+              class="reason__icon"
+            />
+            <p class="reason__title">Mở rộng network và học hỏi từ cộng đồng</p>
             <p class="reason__content">
               RecLand cũng thường xuyên tổ chức những buổi chia sẻ, buổi offline
               nhằm giúp các bạn REC trau dồi, học hỏi và mở rộng được network
@@ -146,12 +173,9 @@
       </div>
 
       <!-- PARTNERS SECTION -->
-      <div>
-        <h1 style="text-align: center">Đối tác</h1>
-        <div
-          class="flex-box"
-          style="column-gap: 60px; margin-top: 40px; justify-content: center"
-        >
+      <div class="partners__section">
+        <h1>Đối tác</h1>
+        <div class="partners__list">
           <div class="partner__logo">
             <img src="./images/partner1.png" />
           </div>
@@ -176,69 +200,49 @@
 
       <!-- PROCESS -->
       <div>
-        <div style="text-align: center">
-          <text style="color: #021a84; font-size: 18px; line-height: 28px"
-            >Quy trình làm việc</text
-          >
+        <div class="process__title">
+          <h4>Quy trình làm việc</h4>
           <h1>Hợp tác cùng RecLand</h1>
         </div>
-        <div
-          style="
-            margin-top: 40px;
-            justify-content: center;
-            gap: 101px;
-            width: 90%;
-            justify-self: center;
-            display: flex;
-          "
-        >
-          <div
-            class="flex-box"
-            style="flex-direction: column; row-gap: 16px; flex: 1"
-          >
-            <img src="./images/one.svg" />
-            <img src="./images/Add.png" />
-            <text class="process__title">Tạo một tài khoản</text>
-            <text class="process__content">Trở thành member trên RecLand</text>
+        <div class="process_container">
+          <div class="flex-box process_container__box">
+            <img src="./images/one.svg" class="process_number" />
+            <img src="./images/Add.png" class="process__icon" />
+            <p class="process__title">Tạo một tài khoản</p>
+            <p class="process__content">Trở thành member trên RecLand</p>
           </div>
-          <div
-            class="flex-box"
-            style="flex-direction: column; row-gap: 16px; flex: 1"
-          >
-            <img src="./images/two.svg" />
-            <img src="./images/Search.png" />
-            <text class="process__title">Tìm kiếm công việc</text>
-            <text class="process__content"
-              >Tìm kiếm công việc phù hợp để mời ứng viên</text
-            >
+          <div class="flex-box process_container__box">
+            <img src="./images/two.svg" class="process_number" />
+            <img src="./images/Search.png" class="process__icon" />
+            <p class="process__title">Tìm kiếm công việc</p>
+            <p class="process__content">
+              Tìm kiếm công việc phù hợp để mời ứng viên
+            </p>
           </div>
-          <div
-            class="flex-box"
-            style="flex-direction: column; row-gap: 16px; flex: 1"
-          >
-            <img src="./images/three.svg" />
-            <img src="./images/Shield.png" />
-            <text class="process__title">Giới thiệu ứng viên</text>
-            <text class="process__content"
-              >Giới thiệu ứng viên vào các vị trí đang tuyển, process ứng viên
-              và nhận kết quả</text
-            >
+          <div class="flex-box process_container__box">
+            <img src="./images/three.svg" class="process_number" />
+            <img src="./images/Shield.png" class="process__icon" />
+            <p class="process__title">Giới thiệu ứng viên</p>
+            <p class="process__content">
+              Giới thiệu ứng viên vào các vị trí đang tuyển, process ứng viên và
+              nhận kết quả
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- FOOTER -->
-    <div class="footer">
+    <section class="footer">
       <div class="footer__cta">
         <div class="footer__cta--block1 flex-box">
           <img src="./images/heart-icon.png" class="footer__cta--img" />
           <div>
-            <text class="footer__cta--title">Bạn muốn đến với Recland</text
-            ><br />
-            <text class="footer__cta--subtitle">
-              Chúng tôi sẽ giúp bạn thành công trên con đường Recer</text
-            >
+            <p class="footer__cta--title">Bạn muốn đến với Recland</p>
+            <br />
+            <p class="footer__cta--subtitle">
+              Chúng tôi sẽ giúp bạn thành công trên con đường Recer
+            </p>
           </div>
         </div>
         <div class="footer__cta--block2 flex-box">
@@ -246,10 +250,7 @@
         </div>
       </div>
 
-      <div
-        class="flex-box"
-        style="justify-content: space-between; margin-top: -15px"
-      >
+      <div class="footer__subscribe-stats">
         <div class="footer__newsletter">
           <input
             type="email"
@@ -260,19 +261,25 @@
             <img src="./images/Send.svg" />
           </div>
         </div>
-        <div class="flex-box" style="gap: 6px">
+        <div class="flex-box footer__jobs-company">
           <div class="footer__jobs-company--quantity"><div>199</div></div>
-          <text style="font-size: 14px; color: #999999">Công việc</text>
+          <p>Công việc</p>
           <div class="footer__jobs-company--quantity"><div>93</div></div>
-          <text style="font-size: 14px; color: #999999">Công ty</text>
+          <p>Công ty</p>
         </div>
       </div>
 
       <div class="footer__info">
         <div class="footer__info--social">
-          <img src="./images/logo.png" alt="logo" />
+          <picture>
+            <source
+              srcset="./images/logo_no_text.png"
+              media="(max-width: 768px)"
+            />
+            <img src="./images/logo.png" alt="logo" />
+          </picture>
           <div style="border: 1px solid #e5e5e5"></div>
-          <div class="flex-box" style="justify-content: space-between">
+          <div class="footer__info--social-icon">
             <img src="./images/Facebook.png" alt="facebook" />
             <img src="./images/twitter.png" alt="twitter" />
             <img src="./images/linkedin.png" alt="linkedin" />
@@ -311,7 +318,10 @@
       </div>
       <div style="border: 1px solid #e5e5e5; margin: 40px 0px"></div>
       <p class="footer__text-copyright">Copyright © 2022 Recland.co</p>
-    </div>
+    </section>
+
+    <!-- SCROLL TO TOP -->
+    <img src="./images/arrow-up.png" class="scroll-top-btn" />
   </body>
 
   <script>
